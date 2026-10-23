@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Element Pebble</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="game" aria-label="Element Pebble game canvas"></canvas>
+
+  <div id="hud" class="hud hidden">
+    <div class="hud-left">
+      <div class="score">Score <span id="score">0</span></div>
+      <div class="best">Best <span id="best">0</span></div>
+      <div class="combo">Combo <span id="combo">0</span></div>
+    </div>
+    <div class="hud-center">
+      <div class="lives" id="lives"></div>
+      <div class="charge-wrap"><div class="charge" id="charge"></div></div>
+      <div class="ready hidden" id="ready">PULSE READY</div>
+    </div>
+    <div class="hud-right">
+      <div class="element-name" id="elementName">Ember</div>
+      <div class="element-glyph" id="elementGlyph">🔥</div>
+    </div>
+  </div>
+
+  <div id="title" class="overlay">
+    <div class="panel">
+      <h1>Element Pebble</h1>
+      <p class="tagline">A small stone in a storm of elements.</p>
+      <div class="instructions">
+        <p>Move: WASD / Arrows / drag</p>
+        <p>Elements: 1 Ember  2 Tide  3 Stone  4 Zephyr</p>
+        <p>Absorb matching motes. Avoid the rest. Pulse at full charge.</p>
+      </div>
+      <button id="startBtn" class="primary">Begin</button>
+      <div class="small">P pause · M mute · Space pulse</div>
+    </div>
+  </div>
+
+  <div id="gameover" class="overlay hidden">
+    <div class="panel">
+      <h1>Shattered</h1>
+      <p class="score-final">Score <span id="finalScore">0</span></p>
+      <p class="best-final">Best <span id="finalBest">0</span></p>
+      <button id="restartBtn" class="primary">Try Again</button>
+    </div>
+  </div>
+
+  <div id="paused" class="overlay hidden">
+    <div class="panel">
+      <h1>Paused</h1>
+      <button id="resumeBtn" class="primary">Resume</button>
+    </div>
+  </div>
+
+  <div class="touch-controls" id="touchControls">
+    <div class="element-buttons">
+      <button data-el="0">🔥</button>
+      <button data-el="1">💧</button>
+      <button data-el="2">🪨</button>
+      <button data-el="3">🌬️</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
